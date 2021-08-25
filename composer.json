@@ -10,7 +10,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.3.0",
-        "laravel/framework": "^8.55",
+        "laravel/framework": "^8.56",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.6",
         "laravel/ui": "^3.3",
@@ -18,7 +18,7 @@
     },
     "require-dev": {
         "bugsnag/bugsnag-laravel": "^2.22",
-        "facade/ignition": "^2.11",
+        "facade/ignition": "^2.12",
         "fakerphp/faker": "^1.15.0",
         "laravel/sail": "^1.10.0",
         "mockery/mockery": "^1.4.3",
