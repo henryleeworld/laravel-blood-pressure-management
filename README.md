@@ -1,4 +1,4 @@
-# Laravel 9 血壓管理
+# Laravel 10 血壓管理
 
 家庭血壓監測能真實地反映個體生活狀態下的血壓狀況，是高血壓管理中最重要的一個環節。通過準確測量血壓，書寫血壓日記，可及時監測高峰血壓值，客觀記錄血壓數值，可避免跟著感覺走，導致血壓控制不佳，還能幫助醫生精准調整用藥，提高診療的效率。
 
@@ -26,8 +26,8 @@ $ php artisan migrate --seed
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/0iAgEsX.png)
+![](https://i.imgur.com/8zPVid7.png)
 > 觀察降壓療效的根本手段和方法
 
-![](https://i.imgur.com/FOhDSkY.png)
+![](https://i.imgur.com/VDmqfkW.png)
 > 詳細記錄每次測量血壓的日期、時間以及所有血壓讀數
