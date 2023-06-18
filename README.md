@@ -26,8 +26,8 @@ $ php artisan migrate --seed
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/8zPVid7.png)
+![](https://i.imgur.com/L304dUB.png)
 > 觀察降壓療效的根本手段和方法
 
-![](https://i.imgur.com/VDmqfkW.png)
+![](https://i.imgur.com/FxGlMkw.png)
 > 詳細記錄每次測量血壓的日期、時間以及所有血壓讀數
