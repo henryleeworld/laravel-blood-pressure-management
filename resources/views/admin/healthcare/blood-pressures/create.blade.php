@@ -8,7 +8,7 @@
     <div class="card-body">
         <form method="POST" action="{{ route("admin.healthcare.blood-pressures.store") }}" enctype="multipart/form-data">
             @csrf
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="user_id">{{ trans('cruds.user.title') . trans('cruds.user.fields.id') }}</label>
                 <input class="form-control {{ $errors->has('user_id') ? 'is-invalid' : '' }}" type="text" name="user_id" id="user_id" value="{{ old('user_id', '') }}" required>
                 @if($errors->has('user_id'))
@@ -18,7 +18,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.user.fields.id_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="measured_in">{{ trans('cruds.blood_pressure.fields.measured_in') }}</label>
                 <input class="form-control {{ $errors->has('measured_in') ? 'is-invalid' : '' }}" type="text" name="measured_in" id="measured_in" value="{{ old('measured_in', '') }}" required>
                 @if($errors->has('measured_in'))
@@ -28,7 +28,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.blood_pressure.fields.measured_in_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="measured_at">{{ trans('cruds.blood_pressure.fields.measured_at') }}</label>
                 <input class="form-control {{ $errors->has('measured_at') ? 'is-invalid' : '' }}" type="text" name="measured_at" id="measured_at" value="{{ old('measured_at', '') }}" required>
                 @if($errors->has('measured_at'))
@@ -38,7 +38,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.blood_pressure.fields.measured_at_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="diastolic_pressure">{{ trans('cruds.blood_pressure.fields.diastolic_pressure') }}</label>
                 <input class="form-control {{ $errors->has('diastolic_pressure') ? 'is-invalid' : '' }}" type="number" name="diastolic_pressure" id="diastolic_pressure" value="{{ old('diastolic_pressure', '') }}" required>
                 @if($errors->has('diastolic_pressure'))
@@ -48,7 +48,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.blood_pressure.fields.diastolic_pressure_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="systolic_pressure">{{ trans('cruds.blood_pressure.fields.systolic_pressure') }}</label>
                 <input class="form-control {{ $errors->has('systolic_pressure') ? 'is-invalid' : '' }}" type="number" name="systolic_pressure" id="systolic_pressure" value="{{ old('systolic_pressure', '') }}" required>
                 @if($errors->has('systolic_pressure'))
@@ -58,7 +58,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.blood_pressure.fields.systolic_pressure_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="pulse_pressure">{{ trans('cruds.blood_pressure.fields.pulse_pressure') }}</label>
                 <input class="form-control {{ $errors->has('pulse_pressure') ? 'is-invalid' : '' }}" type="number" name="pulse_pressure" id="pulse_pressure" value="{{ old('pulse_pressure', '') }}" required>
                 @if($errors->has('pulse_pressure'))
@@ -68,7 +68,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.blood_pressure.fields.pulse_pressure_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label for="remark">{{ trans('cruds.blood_pressure.fields.remark') }}</label>
                 <input class="form-control {{ $errors->has('remark') ? 'is-invalid' : '' }}" type="text" name="remark" id="remark" value="{{ old('remark', '') }}">
                 @if($errors->has('remark'))
@@ -78,7 +78,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.blood_pressure.fields.remark_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-0">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>
