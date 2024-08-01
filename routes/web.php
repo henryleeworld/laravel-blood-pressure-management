@@ -2,16 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 Route::redirect('/', '/login');
 Route::get('/home', function () {
     if (session('status')) {
@@ -52,4 +42,3 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'App\Htt
         Route::post('profile/destroy', 'ChangePasswordController@destroy')->name('password.destroyProfile');
     }
 });
-
