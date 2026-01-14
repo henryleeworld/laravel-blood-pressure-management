@@ -1,4 +1,4 @@
-# Laravel 11 血壓管理
+# Laravel 12 血壓管理
 
 家庭血壓監測能真實地反映個體生活狀態下的血壓狀況，是高血壓管理中最重要的一個環節。通過準確測量血壓，書寫血壓日記，可及時監測高峰血壓值，客觀記錄血壓數值，可避免跟著感覺走，導致血壓控制不佳，還能幫助醫生精准調整用藥，提高診療的效率。
 
@@ -20,14 +20,22 @@ $ php artisan key:generate
 ```sh
 $ php artisan migrate --seed
 ```
+- 執行安裝 Vite 和 Laravel 擴充套件引用的依賴項目。
+```sh
+$ npm install
+```
+- 執行正式環境版本化資源管道並編譯。
+```sh
+$ npm run build
+```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以經由 `/login` 來進行登入，預設的電子郵件和密碼分別為 __admin@admin.com__ 和 __password__ 。
 
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/THOBO49.png)
+![](https://i.imgur.com/W2rJoeT.png)
 > 觀察降壓療效的根本手段和方法
 
-![](https://i.imgur.com/3vIb6DF.png)
+![](https://i.imgur.com/BpUvQrY.png)
 > 詳細記錄每次測量血壓的日期、時間以及所有血壓讀數

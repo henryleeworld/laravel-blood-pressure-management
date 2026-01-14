@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                    {{ trans('global.youAreLoggedIn') }}
+                    {{ trans('global.you_are_logged_in') }}
                 </div>
             </div>
         </div>

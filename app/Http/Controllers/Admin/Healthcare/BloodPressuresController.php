@@ -12,6 +12,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BloodPressuresController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         abort_if(Gate::denies('blood_pressure_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -21,6 +24,9 @@ class BloodPressuresController extends Controller
         return view('admin.healthcare.blood-pressures.index', compact('bloodPressures'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
         abort_if(Gate::denies('blood_pressure_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -30,12 +36,18 @@ class BloodPressuresController extends Controller
         return view('admin.healthcare.blood-pressures.create', compact('bloodPressures'));
     }
 
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(StoreBloodPressureRequest $request)
     {
         $bloodPressure = BloodPressure::create($request->all());
         return redirect()->route('admin.healthcare.blood-pressures.index');
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     */
     public function edit(BloodPressure $bloodPressure)
     {
         abort_if(Gate::denies('blood_pressure_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -44,6 +56,9 @@ class BloodPressuresController extends Controller
         return view('admin.healthcare.blood-pressures.edit', compact('bloodPressures'));
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(UpdateBloodPressureRequest $request, BloodPressure $bloodPressure)
     {
         $bloodPressure->update($request->all());
@@ -51,6 +66,9 @@ class BloodPressuresController extends Controller
         return redirect()->route('admin.healthcare.blood-pressures.index');
     }
 
+    /**
+     * Display the specified resource.
+     */
     public function show(BloodPressure $bloodPressure)
     {
         abort_if(Gate::denies('blood_pressure_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -58,6 +76,9 @@ class BloodPressuresController extends Controller
         return view('admin.healthcare.blood-pressures.show', compact('bloodPressure'));
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(BloodPressure $bloodPressure)
     {
         abort_if(Gate::denies('blood_pressure_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BloodPressure extends Model
 {
+    /** @use HasFactory<\Database\Factories\BloodPressureFactory> */
     use HasFactory, SoftDeletes;
 
     public $table = 'blood_pressures';
@@ -15,7 +16,7 @@ class BloodPressure extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = [
         'user_id',

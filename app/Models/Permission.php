@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Permission extends Model
 {
+    /** @use HasFactory<\Database\Factories\PermissionFactory> */
     use HasFactory, SoftDeletes;
 
     public $table = 'permissions';
@@ -16,7 +17,7 @@ class Permission extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = [
         'title',

@@ -13,6 +13,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RolesApiController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         abort_if(Gate::denies('role_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -20,6 +23,9 @@ class RolesApiController extends Controller
         return new RoleResource(Role::with(['permissions'])->get());
     }
 
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(StoreRoleRequest $request)
     {
         $role = Role::create($request->all());
@@ -30,6 +36,9 @@ class RolesApiController extends Controller
             ->setStatusCode(Response::HTTP_CREATED);
     }
 
+    /**
+     * Display the specified resource.
+     */
     public function show(Role $role)
     {
         abort_if(Gate::denies('role_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -37,6 +46,9 @@ class RolesApiController extends Controller
         return new RoleResource($role->load(['permissions']));
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(UpdateRoleRequest $request, Role $role)
     {
         $role->update($request->all());
@@ -47,6 +59,9 @@ class RolesApiController extends Controller
             ->setStatusCode(Response::HTTP_ACCEPTED);
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(Role $role)
     {
         abort_if(Gate::denies('role_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');

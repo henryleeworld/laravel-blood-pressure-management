@@ -14,6 +14,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RolesController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         abort_if(Gate::denies('role_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -23,6 +26,9 @@ class RolesController extends Controller
         return view('admin.roles.index', compact('roles'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
         abort_if(Gate::denies('role_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -32,6 +38,9 @@ class RolesController extends Controller
         return view('admin.roles.create', compact('permissions'));
     }
 
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(StoreRoleRequest $request)
     {
         $role = Role::create($request->all());
@@ -40,6 +49,9 @@ class RolesController extends Controller
         return redirect()->route('admin.roles.index');
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     */
     public function edit(Role $role)
     {
         abort_if(Gate::denies('role_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -51,6 +63,9 @@ class RolesController extends Controller
         return view('admin.roles.edit', compact('permissions', 'role'));
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(UpdateRoleRequest $request, Role $role)
     {
         $role->update($request->all());
@@ -59,6 +74,9 @@ class RolesController extends Controller
         return redirect()->route('admin.roles.index');
     }
 
+    /**
+     * Display the specified resource.
+     */
     public function show(Role $role)
     {
         abort_if(Gate::denies('role_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -68,6 +86,9 @@ class RolesController extends Controller
         return view('admin.roles.show', compact('role'));
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(Role $role)
     {
         abort_if(Gate::denies('role_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
