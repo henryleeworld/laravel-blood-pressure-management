@@ -2,31 +2,19 @@
 
 namespace App\Models;
 
+use Database\Factories\BloodPressureFactory;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[Fillable(['user_id', 'measured_in', 'measured_at', 'diastolic_pressure', 'systolic_pressure', 'pulse_pressure', 'remark'])]
+#[Table('blood_pressures')]
 class BloodPressure extends Model
 {
-    /** @use HasFactory<\Database\Factories\BloodPressureFactory> */
+    /** @use HasFactory<BloodPressureFactory> */
     use HasFactory, SoftDeletes;
-
-    public $table = 'blood_pressures';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
-    protected $fillable = [
-        'user_id',
-        'measured_in',
-        'measured_at',
-        'diastolic_pressure',
-        'systolic_pressure',
-        'pulse_pressure',
-        'remark',
-    ];
 
     /**
      * Get the attributes that should be cast.

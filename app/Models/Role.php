@@ -2,27 +2,21 @@
 
 namespace App\Models;
 
+use Database\Factories\RoleFactory;
 use DateTimeInterface;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[Fillable(['title'])]
+#[Table('roles')]
 class Role extends Model
 {
-    /** @use HasFactory<\Database\Factories\RoleFactory> */
+    /** @use HasFactory<RoleFactory> */
     use HasFactory, SoftDeletes;
-
-    public $table = 'roles';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
-    protected $fillable = [
-        'title',
-    ];
 
     /**
      * Get the attributes that should be cast.

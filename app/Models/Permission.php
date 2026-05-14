@@ -2,26 +2,20 @@
 
 namespace App\Models;
 
+use Database\Factories\PermissionFactory;
 use DateTimeInterface;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[Fillable(['title'])]
+#[Table('permissions')]
 class Permission extends Model
 {
-    /** @use HasFactory<\Database\Factories\PermissionFactory> */
+    /** @use HasFactory<PermissionFactory> */
     use HasFactory, SoftDeletes;
-
-    public $table = 'permissions';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
-    protected $fillable = [
-        'title',
-    ];
 
     /**
      * Get the attributes that should be cast.
