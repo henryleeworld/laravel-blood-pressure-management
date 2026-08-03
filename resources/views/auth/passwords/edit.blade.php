@@ -50,7 +50,7 @@
                         @csrf
                         <div class="mb-3">
                             <label class="required" for="title">{{ trans('cruds.user.fields.new_password') }}</label>
-                            <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" type="password" name="password" id="password" required>
+                            <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" type="password" name="password" id="password" autocomplete="new-password" passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}" required>
                             @if($errors->has('password'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('password') }}
@@ -59,7 +59,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="required" for="title">{{ trans('cruds.user.fields.repeat_new_password') }}</label>
-                            <input class="form-control" type="password" name="password_confirmation" id="password_confirmation" required>
+                            <input class="form-control" type="password" name="password_confirmation" id="password_confirmation" autocomplete="new-password" passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}" required>
                         </div>
                         <div class="mb-3">
                             <button class="btn btn-danger" type="submit">

@@ -23,7 +23,7 @@
                         @endif
                     </div>
                     <div class="mb-3">
-                        <input id="password" type="password" name="password" class="form-control" required placeholder="{{ trans('global.login_password') }}">
+                        <input id="password" type="password" name="password" class="form-control" required autocomplete="new-password" placeholder="{{ trans('global.login_password') }}" passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}">
 
                         @if($errors->has('password'))
                             <div class="invalid-feedback">
@@ -32,7 +32,7 @@
                         @endif
                     </div>
                     <div class="mb-3">
-                        <input id="password-confirm" type="password" name="password_confirmation" class="form-control" required placeholder="{{ trans('global.login_password_confirmation') }}">
+                        <input id="password-confirm" type="password" name="password_confirmation" class="form-control" required autocomplete="new-password" placeholder="{{ trans('global.login_password_confirmation') }}" passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}">
                     </div>
 
                     <div class="row">
